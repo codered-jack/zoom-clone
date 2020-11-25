@@ -39,4 +39,7 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(process.env.PORT||3030)
+let port = process.env.PORT; // if port is free, or not in use by another app
+server.listen(port, () => { 
+    console.log('port',port);
+} );
